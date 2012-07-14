@@ -11,6 +11,7 @@ var app = module.exports = express.createServer();
 // Configuration
 
 app.configure(function(){
+  app.set('port', process.env.PORT || 3000)
   app.set('views', __dirname + '/views');
   app.set('view engine', 'jade');
   app.use(express.bodyParser());
@@ -28,13 +29,14 @@ app.configure('production', function(){
 });
 
 // Routes
-
 app.get('/', routes.index);
 app.get('/about', function(req,res) {
   res.render('about', { title: 'About CHC' })
 });
+app.get('/discussions', function(req,res) {
+  res.render('discussions', { title: 'Discussions' })
+});
 
-var port = process.env.PORT || 5000;
-app.listen(port, function(){
-  console.log("Express server listening on port %d in %s mode", app.address().port, app.settings.env);
+app.listen(app.get('port'), function(){
+  console.log("Express server listening on port %d in %s mode", app.get('port'), app.settings.env);
 });
