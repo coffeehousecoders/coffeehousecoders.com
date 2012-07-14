@@ -1,9 +1,4 @@
-
-/*
- * GET home page.
- */
-
 exports.index = function(req, res) {
-  res.render('index', { title: 'Coffee House Coders' })
+  res.render('index', { title: 'Coffee House Coders', layout: 'layout.jade' })
 };
 

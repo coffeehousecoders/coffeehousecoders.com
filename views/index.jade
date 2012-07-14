@@ -1,6 +1,26 @@
-h1
-  a(href='/')= title
-p Welcome to #{title}
-p
-  a(href='/about') About CHC
-  a(href='/discussions') Discussions
+extends layout
+
+block content
+  h1 Welcome to Ann Arbor Coffee House Coders
+  h4 A2 Coffee House Coders is a biweekly meetup that takes place in Space 2435 of the University of Michigan's North Quad building.
+  p We are a language-agnostic coding group; everyone is welcome, no matter your skill level.
+
+  hr
+
+  h4 Upcoming events
+  a(href='http://www.meetup.com/CoffeeHouseCoders') Click to view the Meetup group
+
+  hr
+
+  h4 Discussions, Q&A and Announcements
+  p
+    = "Join our Google Group: "
+    a(href='https://groups.google.com/d/forum/coffeehousecoders') https://groups.google.com/d/forum/coffeehousecoders
+  p
+    = "Email us at "
+    a(href='mailto:coffeehousecoders@googlegroups.com') coffeehousecoders@googlegroups.com
+
+  hr
+
+  h4 Twitter
+  a(href='http://twitter.com/coffeehousecode') Follow us on Twitter

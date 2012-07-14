@@ -39,6 +39,9 @@ app.get('/', routes.index);
 app.get('/about', function(req,res) {
   res.render('about', { title: 'About CHC' })
 });
+app.get('/about/organizers', function(req,res) {
+  res.render('organizers', { title: 'About the Organizers' })
+});
 app.get('/discussions', function(req,res) {
   res.render('discussions', { title: 'Discussions' })
 });

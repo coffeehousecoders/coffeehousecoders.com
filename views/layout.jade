@@ -1,17 +1,25 @@
-!!!
-html
+!!! 5
+html(lang='en')
   head
     title= title
+    link(rel='stylesheet', href='/stylesheets/bootstrap.min.css')
     link(rel='stylesheet', href='/stylesheets/style.css')
-  body!= body
-    script(type='text/javascript')
-      var _gaq = _gaq || [];
-      _gaq.push(['_setAccount', 'UA-33292334-1']);
-      _gaq.push(['_setDomainName', 'coffeehousecoders.com']);
-      _gaq.push(['_trackPageview']);
-
-      (function() {
-        var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
-        ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
-        var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
-      })();
+    script(type='text/javascript', src='/javascripts/bootstrap.min.js')
+    meta(name='viewport', content='width=device-width, initial-scale=1.0')
+  body
+    .navbar
+      .navbar-inner
+        .container
+          a.brand(href='/') A2 Coffee House Coders
+          ul.nav.nav-pills
+            li
+              a(href='/') Home
+            li
+              a(href='/about') About CHC
+            li
+              a(href='/about/organizers') About the Organizers
+            li
+              a(href='/discussions') Discussions
+    .container
+      block content
+    script(type='text/javascript', src='/javascripts/analytics.js')
