@@ -5,7 +5,8 @@
   "dependencies": {
     "express": "latest",
     "jade": ">= 0.0.1",
-    "pg": "0.5.4"
+    "pg": "0.5.4",
+    "airbrake": "0.2.9"
    },
    "engines": {
      "node": "0.6.x" 

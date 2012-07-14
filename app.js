@@ -3,8 +3,9 @@
  * Module dependencies.
  */
 
-var express = require('express')
-  , routes = require('./routes');
+var express = require('express'),
+  routes = require('./routes'),
+  airbrake = require('airbrake').createClient(process.env.AIRBRAKE_KEY);
 
 var app = module.exports = express.createServer();
 
@@ -26,6 +27,7 @@ app.configure('development', function(){
 
 app.configure('production', function(){
   app.use(express.errorHandler());
+  airbrake.handleExceptions();
 });
 
 // Routes
