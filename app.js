@@ -21,6 +21,10 @@ app.configure(function(){
   app.use(express.static(__dirname + '/public'));
 });
 
+airbrake.serviceHost = 'e.alfajango.com'
+airbrake.developmentEnvironments = ['development']
+airbrake.handleExceptions();
+
 app.configure('development', function(){
   app.use(express.errorHandler({ dumpExceptions: true, showStack: true }));
 });
