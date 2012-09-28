@@ -3,16 +3,21 @@ extends layout
 block content
   h1 About the Organizers
 
-  .row
+  .row(itemscope="itemscope", itemtype="http://schema.org/Person")
     .span2
       img.img-rounded(src="/images/cory-profile-140.png", height="140", width="140")
     .span10
-      h3 Cory Kaufman-Schofield
-      p= 'Cory is a developer at '
-        a(href="http://www.alfajango.com") AlfaJango
-        = ' in the '
-        a(href="http://www.techbrewery.org") TechBrewery
-        . He's also got a few side projects that take up way less of his time than he would like.
+      h3(itemprop="name") Cory Kaufman-Schofield
+      p
+        = ' Cory is a developer at '
+        span(itemprop="affiliation", itemscope="itemscope", itemtype="http://schema.org/LocalBusiness")
+          a(href="http://www.alfajango.com", itemprop="url")
+            span(itemprop="name") AlfaJango
+          = ' in the '
+          a(href="http://www.techbrewery.org", itemprop="location") TechBrewery
+        | . He's also got a few side projects that take up way less of his time than he would like.
+      p Website:&nbsp;
+        a(href="http://corykaufman.com") corykaufman.com
       p Twitter:&nbsp;
         a(href="http://twitter.com/allspiritseve") @allspiritseve
       p Github:&nbsp;
