@@ -7,3 +7,37 @@
 h1,h2,h3,h4,h5,h6 {
   margin-bottom: 10px;
 }
+
+.avatar {
+  -moz-box-shadow:0px 0px 10px #AAA;
+  -webkit-box-shadow:0px 0px 10px #AAA;
+  box-shadow:0px 0px 10px #AAA;
+}
+.social-callout {
+  margin:37px 40px 0 20px;
+  border:1px solid #EDEDED;
+  padding:10px 5px 5px 10px;
+  -moz-box-shadow:0px 0px 10px #EFEFEF;
+  -webkit-box-shadow:0px 0px 10px #EFEFEF;
+  box-shadow:0px 0px 10px #EFEFEF;
+}
+.social-callout p a span {
+  display:inline-block;
+  vertical-align: bottom;
+  margin:0 8px 0 0;
+  width:24px;
+  height:24px;
+}
+.twitter {
+  background:url("/images/twitter.png") no-repeat;
+}
+.octocat {
+  background:url("/images/octocat.png") no-repeat;
+}
+
+@media only screen and (-webkit-min-device-pixel-ratio: 2) {
+
+  .twitter { background: url("/images/twitter@2x.png") no-repeat; background-size:24px; }
+  .octocat { background: url("/images/octocat@2x.png") no-repeat; background-size:24px; }
+
+}
