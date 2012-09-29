@@ -5,48 +5,70 @@ block content
 
   .row(itemscope="itemscope", itemtype="http://schema.org/Person")
     .span2
-      img.img-rounded(src="/images/cory-profile-140.png", height="140", width="140")
-    .span10
+      img.img-rounded.avatar(src="/images/cory-profile-140.png", height="140", width="140")
+    .span7
       h3(itemprop="name") Cory Kaufman-Schofield
       p
-        = ' Cory is a developer at '
+        = 'Cory is a developer at '
         span(itemprop="affiliation", itemscope="itemscope", itemtype="http://schema.org/LocalBusiness")
           a(href="http://www.alfajango.com", itemprop="url")
             span(itemprop="name") AlfaJango
           = ' in the '
           a(href="http://www.techbrewery.org", itemprop="location") TechBrewery
         | . He's also got a few side projects that take up way less of his time than he would like.
-      p Website:&nbsp;
-        a(href="http://corykaufman.com") corykaufman.com
-      p Twitter:&nbsp;
-        a(href="http://twitter.com/allspiritseve") @allspiritseve
-      p Github:&nbsp;
-        a(href="http://github.com/allspiritseve") allspiritseve
+      p
+        a(href="http://www.corykaufman.com/") www.corykaufman.com
+    .span3
+      div.social-callout
+        p
+          a(href="http://twitter.com/allspiritseve")
+            span.twitter
+            @allspiritseve
+        p
+          a(href="http://github.com/allspiritseve")
+            span.octocat
+            = "allspiritseve"
   br(clear="both")
   .row
     .span2
-      img.img-rounded.hi-res(src="/images/cait-profile-140.png", height="140", width="140")
-    .span10
+      img.img-rounded.avatar.hi-res(src="/images/cait-profile-140.png", height="140", width="140")
+    .span7
       h3 Cait Holman
       p= 'Cait is a PhD student at the University of Michigan School of Information, and the project manager at '
         a(href="http://www.alfajango.com/") AlfaJango
         .
-      p Twitter:&nbsp;
-        a(href="http://twitter.com/chcholman")@chcholman
-      p Github:&nbsp;
-        a(href="http://github.com/chcholman") chcholman
+      p
+        a(href="http://www.caitholman.com/") www.caitholman.com
+    .span3
+      div.social-callout
+        p
+          a(href="http://twitter.com/chcholman")
+            span.twitter
+            @chcholman
+        p
+          a(href="http://github.com/chcholman")
+            span.octocat
+            = "chcholman"
 
   br(clear="both")
   .row
     .span2
-      img.img-rounded.hi-res(src="/images/kevin-profile-140.png", height="140", width="140")
-    .span10
+      img.img-rounded.avatar.hi-res(src="/images/kevin-profile-140.png", height="140", width="140")
+    .span7
       h3 Kevin Champion
       p Kevin is a freelance web developer who specializes in Drupal. He thinks favicons are important.
-      p Twitter:&nbsp;
-        a(href="http://twitter.com/kevinchampion")@kevinchampion
-      p Github:&nbsp;
-        a(href="http://github.com/kevinchampion") kevinchampion
+      p
+        a(href="http://www.kevinchampion.com/") www.kevinchampion.com
+    .span3
+      div.social-callout
+        p
+          a(href="http://twitter.com/kevinchampion")
+            span.twitter
+            @kevinchampion
+        p
+          a(href="http://github.com/kevinchampion")
+            span.octocat
+            = "kevinchampion"
   br(clear="both")
 
   h2 Coffee House Coders Alumni
