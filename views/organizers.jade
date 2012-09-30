@@ -29,13 +29,15 @@ block content
             span.octocat
             = "allspiritseve"
   br(clear="both")
-  .row
+  .row(itemscope="itemscope", itemtype="http://schema.org/Person")
     .span2
       img.img-rounded.avatar.hi-res(src="/images/cait-profile-140.png", height="140", width="140")
     .span7
-      h3 Cait Holman
+      h3(itemprop="name") Cait Holman
       p= 'Cait is a PhD student at the University of Michigan School of Information, and the project manager at '
-        a(href="http://www.alfajango.com/") AlfaJango
+        span(itemprop="affiliation", itemscope="itemscope", itemtype="http://schema.org/LocalBusiness")
+          a(href="http://www.alfajango.com/", itemprop="url")
+            span(itemprop="name") AlfaJango
         .
       p
         a(href="http://www.caitholman.com/") www.caitholman.com
@@ -51,11 +53,11 @@ block content
             = "chcholman"
 
   br(clear="both")
-  .row
+  .row(itemscope="itemscope", itemtype="http://schema.org/Person")
     .span2
       img.img-rounded.avatar.hi-res(src="/images/kevin-profile-140.png", height="140", width="140")
     .span7
-      h3 Kevin Champion
+      h3(itemprop="name") Kevin Champion
       p Kevin is a freelance web developer who specializes in Drupal. He thinks favicons are important.
       p
         a(href="http://www.kevinchampion.com/") www.kevinchampion.com
@@ -81,7 +83,7 @@ block content
     .span2
       img.img-rounded.avatar.hi-res(src="/images/joanna-profile-140.png", height="140", width="140")
     .span3
-      h3 Joanna Price
+      h3(itemprop="name") Joanna Price
       p
         a(href="http://www.littlelibrarianthatcould.com/") www.littlelibrarianthatcould.com
       div.social-callout-alumnus
@@ -92,7 +94,7 @@ block content
     .span2.offset1
       img.img-rounded.avatar.hi-res(src="/images/mulka-profile-140.png", height="140", width="140")
     .span3
-      h3 Kyle Mulka
+      h3(itemprop="name") Kyle Mulka
       p
         a(href="http://www.kylemulka.com/") www.kylemulka.com
       div.social-callout-alumnus
@@ -110,7 +112,7 @@ block content
     .span2
       img.img-rounded.avatar(src="/images/zach-profile-87.png", height="87", width="87")
     .span3
-      h3 Zach Steindler
+      h3(itemprop="name") Zach Steindler
 
       div.social-callout-alumnus
         p
@@ -124,7 +126,7 @@ block content
     .span2.offset1
       img.img-rounded.avatar(src="/images/adam-profile-50.png", height="50", width="50")
     .span3
-      h3 Adam Goodman
+      h3(itemprop="name") Adam Goodman
 
       div.social-callout-alumnus
         p
