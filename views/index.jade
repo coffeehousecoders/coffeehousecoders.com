@@ -1,11 +1,15 @@
 extends layout
 
 block content
-  h1 Welcome to Ann Arbor Coffee House Coders
-  h4 A2 Coffee House Coders is a biweekly meetup that takes place in 
-    a(href='http://cartiki.com/loc/1225') Space 2435 
-    of the University of Michigan's North Quad building.
-  p We are a language-agnostic coding group; everyone is welcome, no matter your skill level.
+  .event(itemscope, itemtype="http://schema.org/Event")
+    h1 Welcome to
+      span(itemprop="name") Ann Arbor Coffee House Coders
+    h4(itemprop="description") A2 Coffee House Coders is a biweekly meetup that takes place in
+      span(itemprop="location", itemscope, itemtype="http://schema.org/Place")
+        a(href='http://cartiki.com/loc/1225', itemprop="name")= ' Space 2435'
+        = ' of the '
+        span(itemprop="containedIn") University of Michigan's North Quad building.
+    p We are a language-agnostic coding group; everyone is welcome, no matter your skill level.
 
   hr
 
