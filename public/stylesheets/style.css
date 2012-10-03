@@ -36,6 +36,10 @@ h1,h2,h3,h4,h5,h6 {
   background:url("/images/octocat.png") no-repeat;
 }
 
+.navbar .container {
+  width: 940px;
+}
+
 @media only screen and (-webkit-min-device-pixel-ratio: 2) {
 
   .twitter { background: url("/images/twitter@2x.png") no-repeat; background-size:24px; }
