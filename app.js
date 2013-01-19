@@ -4,7 +4,6 @@
  */
 
 var express = require('express'),
-  routes = require('./routes'),
   airbrake = require('airbrake').createClient(process.env.AIRBRAKE_KEY);
 
 var app = module.exports = express.createServer();
@@ -17,8 +16,8 @@ app.configure(function(){
   app.set('view engine', 'jade');
   app.use(express.bodyParser());
   app.use(express.methodOverride());
+  app.use(express.static('public'));
   app.use(app.router);
-  app.use(express.static(__dirname + '/public'));
 });
 
 airbrake.serviceHost = 'e.alfajango.com'
@@ -34,16 +33,34 @@ app.configure('production', function(){
   airbrake.handleExceptions();
 });
 
+app.get('*', function(req, res, next){
+  var matches = req.headers.host.match(/^([^\.]+)\.coffeehousecoders/);
+  if (matches) {
+    if (matches[1] == 'a2') {
+      res.redirect('http://' + req.headers.host.replace(/^a2\./,'annarbor.') + req.url);
+      res.send();
+    } else {
+      req.url = '/' + matches[1] + req.url
+    }
+  }
+  next();
+});
+
 // Routes
-app.get('/', routes.index);
-app.get('/about', function(req,res) {
-  res.render('about', { title: 'About CHC' })
+app.get('/annarbor/', function(req, res) {
+  res.render('annarbor/index', { title: 'Ann Arbor Coffee House Coders' })
 });
-app.get('/about/organizers', function(req,res) {
-  res.render('organizers', { title: 'About the Organizers' })
+app.get('/annarbor/about', function(req, res) {
+  res.render('annarbor/about', { title: 'About CHC' })
 });
-app.get('/discussions', function(req,res) {
-  res.render('discussions', { title: 'Discussions' })
+app.get('/annarbor/about/organizers', function(req, res) {
+  res.redirect('/organizers');
+});
+app.get('/annarbor/organizers', function(req, res) {
+  res.render('annarbor/organizers', { title: 'Meet the organizers' })
+});
+app.get('/annarbor/discussions', function(req, res) {
+  res.render('annarbor/discussions', { title: 'Discussions' })
 });
 
 app.listen(app.get('port'), function(){
