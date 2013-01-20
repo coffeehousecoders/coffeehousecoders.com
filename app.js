@@ -62,6 +62,9 @@ app.get('/annarbor/organizers', function(req, res) {
 app.get('/annarbor/discussions', function(req, res) {
   res.render('annarbor/discussions', { title: 'Discussions' })
 });
+app.get('/detroit/', function(req, res) {
+  res.render('detroit/index', { title: 'Detroit Coffee House Coders' })
+})
 
 app.listen(app.get('port'), function(){
   console.log("Express server listening on port %d in %s mode", app.get('port'), app.settings.env);
