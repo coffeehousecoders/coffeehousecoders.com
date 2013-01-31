@@ -1,0 +1,28 @@
+!!! 5
+html(lang='en')
+  head
+    title= title
+    link(rel='stylesheet', href='/stylesheets/bootstrap.min.css')
+    link(rel='stylesheet', href='/stylesheets/style.css')
+    script(type='text/javascript', src='/javascripts/jquery.min.js')
+    script(type='text/javascript', src='/javascripts/bootstrap.min.js')
+    meta(name='viewport', content='width=device-width, initial-scale=1.0')
+  body
+    .navbar
+      .navbar-inner
+        .container
+          block nav
+            a.brand(href='/') Coffee House Coders
+            ul.nav
+              li
+                a(href='http://annarbor.' + domain) Ann Arbor
+              li
+                a(href='http://detroit.' + domain) Detroit
+              li
+                a(href='http://downriver.' + domain) Downriver
+              li
+                a(href='http://royaloak.' + domain) Royal Oak
+    .container
+      block content
+    script(type='text/javascript', src='/javascripts/analytics.js')
+    script(type='text/javascript', src='/javascripts/retina.js')

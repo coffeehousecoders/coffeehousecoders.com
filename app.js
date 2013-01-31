@@ -1,12 +1,9 @@
-
 /**
  * Module dependencies.
  */
 
 var express = require('express'),
-  airbrake = require('airbrake').createClient(process.env.AIRBRAKE_KEY);
-
-var app = module.exports = express.createServer();
+  app = express();
 
 // Configuration
 
@@ -20,35 +17,42 @@ app.configure(function(){
   app.use(app.router);
 });
 
-airbrake.serviceHost = 'e.alfajango.com'
-airbrake.developmentEnvironments = ['development']
-airbrake.handleExceptions();
-
 app.configure('development', function(){
   app.use(express.errorHandler({ dumpExceptions: true, showStack: true }));
 });
 
 app.configure('production', function(){
   app.use(express.errorHandler());
-  airbrake.handleExceptions();
 });
 
 app.get('*', function(req, res, next){
-  var matches = req.headers.host.match(/^([^\.]+)\.coffeehousecoders/);
-  if (matches) {
-    if (matches[1] == 'a2') {
-      res.redirect('http://' + req.headers.host.replace(/^a2\./,'annarbor.') + req.url);
-      res.send();
-    } else {
-      req.url = '/' + matches[1] + req.url
-    }
+
+  res.locals.subdomains = {
+    'annarbor': 'Ann Arbor',
+    'detroit': 'Detroit',
+    'downriver': 'Downriver',
+    'royaloak': 'Royal Oak'
   }
+
+  var matches = req.headers.host.match(/^([^\.]*)\.?(coffeehousecoders.*)$/);
+  if (matches) {
+    res.locals.subdomain = matches[1];
+    res.locals.domain = matches[2];
+    req.url = '/' + matches[1] + req.url;
+  }
+
   next();
 });
 
+
 // Routes
+
+app.get('/', function(req, res) {
+  res.render('index', { title: 'Coffee House Coders' });
+});
+
 app.get('/annarbor/', function(req, res) {
-  res.render('annarbor/index', { title: 'Ann Arbor Coffee House Coders' })
+  res.render('annarbor/index', { title: 'Ann Arbor Coffee House Coders' });
 });
 app.get('/annarbor/about', function(req, res) {
   res.render('annarbor/about', { title: 'About CHC' })
@@ -62,8 +66,13 @@ app.get('/annarbor/organizers', function(req, res) {
 app.get('/annarbor/discussions', function(req, res) {
   res.render('annarbor/discussions', { title: 'Discussions' })
 });
+
 app.get('/detroit/', function(req, res) {
   res.render('detroit/index', { title: 'Detroit Coffee House Coders' })
+})
+
+app.get('/downriver/', function(req, res) {
+  res.render('downriver/index', { title: 'Downriver Coffee House Coders' })
 })
 
 app.listen(app.get('port'), function(){

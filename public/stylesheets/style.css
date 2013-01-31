@@ -13,6 +13,34 @@ h1,h2,h3,h4,h5,h6 {
   -webkit-box-shadow:0px 0px 10px #AAA;
   box-shadow:0px 0px 10px #AAA;
 }
+
+#locations a.dropdown-toggle {
+  background-color: #333;
+  font-weight: 200;
+  font-size: 16px;
+  color: #bbb;
+}
+
+#locations a.dropdown-toggle:hover {
+  color: #fff;
+}
+
+#locations .active > a {
+  background-color: #08c;
+}
+
+.navbar a.brand {
+  padding-right: 10px;
+}
+
+.navbar a.brand:hover {
+  color: #fff;
+}
+
+.dropdown .caret {
+  margin-left: 6px;
+}
+
 .social-callout {
   margin:37px 40px 0 20px;
   border:1px solid #EDEDED;
