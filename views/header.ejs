@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title><%= title %></title>
+    <link rel="stylesheet" href="/stylesheets/bootstrap.min.css" />
+    <link rel="stylesheet" href="/stylesheets/style.css" />
+    <script type="text/javascript" src="/javascripts/jquery.min.js"></script>
+    <script type="text/javascript" src="/javascripts/bootstrap.min.js"></script>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  </head>
+  <body>
+    <div class="navbar">
+      <div class="navbar-inner">
+        <div class="container">
+          <% if (subdomain == 'annarbor') { %>
+            <%- include annarbor/nav %>
+          <% } else if(subdomain == 'detroit') { %>
+            <%- include detroit/nav %>
+          <% } else if(subdomain == 'downriver') { %>
+            <%- include downriver/nav %>
+          <% } else { %>
+            Domain Nav
+          <% } %>
+          <%- include locations-nav %>
+        </div>
+      </div>
+    </div>
+    <div class="container">

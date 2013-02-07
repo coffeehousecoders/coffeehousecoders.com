@@ -1,0 +1,15 @@
+<ul id="locations" class="nav pull-right">
+  <li class="groups dropdown">
+    <a href="#" class="dropdown-toggle" data-toggle="dropdown">
+      Locations
+      <span class="caret">
+    </a>
+    <ul class="dropdown-menu">
+      <% for(var key in subdomains) { %>
+        <li class="<%= (key == subdomain ? "active" : "") %>">
+          <a href="http://<%= key %>.<%= domain %>"><%= subdomains[key] %></a>
+        </li>
+      <% } %>
+    </ul>
+  </li>
+</ul>

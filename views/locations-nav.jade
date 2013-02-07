@@ -1,9 +1,0 @@
-ul#locations.nav.pull-right
-  li.groups.dropdown
-    a.dropdown-toggle(data-toggle="dropdown", href="#")
-      = 'Locations'
-      span.caret
-    ul.dropdown-menu
-      each val, key in subdomains
-        li(class=(key == subdomain ? "active" : ""))
-          a(href='http://' + key + '.' + domain)= val
