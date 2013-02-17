@@ -13,15 +13,15 @@
       <div class="navbar-inner">
         <div class="container">
           <% if (subdomain == 'annarbor') { %>
-            <%- include annarbor/nav %>
+            <% include annarbor/nav %>
           <% } else if(subdomain == 'detroit') { %>
-            <%- include detroit/nav %>
+            <% include detroit/nav %>
           <% } else if(subdomain == 'downriver') { %>
-            <%- include downriver/nav %>
+            <% include downriver/nav %>
           <% } else { %>
-            Domain Nav
+            <% include nav %>
           <% } %>
-          <%- include locations-nav %>
+          <% include locations-nav %>
         </div>
       </div>
     </div>

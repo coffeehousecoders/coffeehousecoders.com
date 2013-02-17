@@ -10,6 +10,10 @@
           <a href="http://<%= key %>.<%= domain %>"><%= subdomains[key] %></a>
         </li>
       <% } %>
+      <li class="divider"></li>
+      <li class="<%= subdomain ? "" : "active" %>">
+        <a href="http://<%= domain %>">CHC Home</a>
+      </li>
     </ul>
   </li>
 </ul>
