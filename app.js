@@ -57,11 +57,11 @@ app.get('/annarbor/', function(req, res) {
 app.get('/annarbor/about', function(req, res) {
   res.render('annarbor/about', { title: 'About CHC' })
 });
-app.get('/annarbor/about/organizers', function(req, res) {
-  res.redirect('/organizers');
-});
 app.get('/annarbor/organizers', function(req, res) {
   res.render('annarbor/organizers', { title: 'Meet the organizers' })
+});
+app.get('/annarbor/workshops', function(req, res) {
+  res.render('annarbor/workshops', { title: 'Workshops' })
 });
 app.get('/annarbor/discussions', function(req, res) {
   res.render('annarbor/discussions', { title: 'Discussions' })
