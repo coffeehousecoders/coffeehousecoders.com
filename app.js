@@ -47,7 +47,7 @@ app.get('*', function(req, res, next){
 
 // Routes
 
-app.get('/', function(req, res) {
+app.get('/www/', function(req, res) {
   res.render('index', { title: 'Coffee House Coders' });
 });
 
