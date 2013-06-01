@@ -54,6 +54,9 @@ app.get('/www/', function(req, res) {
 app.get('/annarbor/', function(req, res) {
   res.render('annarbor/index', { title: 'Ann Arbor Coffee House Coders' });
 });
+app.get('/annarbor/events', function(req, res) {
+  res.render('annarbor/events', { title: 'Events' })
+});
 app.get('/annarbor/about', function(req, res) {
   res.render('annarbor/about', { title: 'About CHC' })
 });
